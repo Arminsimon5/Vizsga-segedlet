@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML és CSS segédlet</title>
+    <script type="text/javascript">
+        function setvisible(id)
+        {
+            document.getElementById(id).style.visibility="visible";
+        }
+        function setinvisible(id)
+        {
+            document.getElementById(id).style.visibility="hidden";
+        }
+    </script>
+    <style type="text/css">
+        span {  font-family: "Lucida Console", Monaco, monospace; font-size: 0.9em; font-weight: bold;}
+        span.lighter {  font-weight: lighter;}
+        table, td {  border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <h1>HTML és CSS segédlet</h1>
+<h2>Tartalomjegyzék</h2>
+<ul>
+<li><a href="#test">HTML és CSS szintaxis ellenőrzése</a></li>
+<li><a href="#keret">HTML fájlok szerkezete</a></li>
+<li><a href="#html">HTML címkék</a></li>
+<li><a href="#css">Stílustulajdonságok</a></li>
+<li><a href="#style">Stílustulajdonságok megadása CSS fájlban</a></li>
+<li><a href="#hexa">HTML színkódok</a></li>
+<li><a href="#menu">Oldal menüszerkezetének megadása</a></li>
+</ul>
+
+<h2><a name="test"></a>HTML és CSS szintaxis ellenőrzése</h2>
+<div>A weboldalunk kódját a következő oldalakon ellenőrizhetjük:
+<ol>
+<li>HTML: http://validator.w3.org/</li>
+<li>CSS: http://jigsaw.w3.org/css-validator/</li>
+</ol>
+Ha az oldalunk helyes, az alábbi módon egy erre utaló "pecsétet" tehetünk
+rá, amelyre kattintva bárki láthatja, tényleg jó-e a szintaxisunk. A "pecsétek"
+és linkjük html kódja (amelyet a weboldalunkra másolhatunk) a következő:
+<ol>
+<li>HTML:<br>
+<span>
+&lt;a href="http://validator.w3.org/check?uri=referer"&gt;<br>
+&lt;img src="http://www.w3.org/Icons/valid-html401.png"  alt="Valid HTML4"&gt;&lt;/a&gt;
+</span>
+</li>
+<li>CSS:<br>
+<span>
+&lt;a href="http://jigsaw.w3.org/css-validator/check/referer"&gt;<br>
+&lt;img src="http://www.w3.org/Icons/valid-css.png"  alt="Valid CSS"&gt;&lt;/a&gt;
+</span>
+</li>
+</ol>
+A fenti html kódot helyezzük el tehát a html oldalunk tetszőleges részén. Itt 
+a következő fog megjelenni:<br>
+<a href="http://validator.w3.org/check?uri=referer">
+<img src="http://www.w3.org/Icons/valid-html401.png" alt="Valid HTML4"></a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+<img src="http://www.w3.org/Icons/valid-css.png" alt="Valid CSS"></a>
+</div>
+<br><a href="#top">Vissza az elejére</a>
+
+<h2><a name="keret"></a>HTML fájlok szerkezete</h2>
+<span>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;Oldal címe&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&lt;h1&gt;Címsor&lt;/h1&gt;<br>
+&nbsp;&nbsp;&lt;p&gt;Bekezdés&lt;/p&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</span>
+<br><a href="#top">Vissza az elejére</a>
+
+<h2><a name="html"></a>HTML címkék</h2>
+<table>
+<tr><td>Főcím</td><td><span>&lt;h1&gt;&lt;/h1&gt;</span></td></tr>
+<tr><td>Alcím</td><td><span>&lt;h2&gt;&lt;/h2&gt;</span></td></tr>
+<tr><td>Bekezdés</td><td><span>&lt;p&gt;&lt;/p&gt;</span> vagy <span>&lt;div&gt;&lt;/div&gt;</span></td></tr>
+<tr><td>Sortörés</td><td><span>&lt;br&gt;</span> (nincs záró címke!)</td></tr>
+<tr><td>Vastag/dőlt/aláhúzott</td><td><span>&lt;strong&gt;&lt;/strong&gt;, &lt;em&gt;&lt;/em&gt;, &lt;u&gt;&lt;/u&gt;</span></td></tr>
+<tr><td>Beillesztett kép</td><td><span>&lt;img src="kep.png" alt="leírás"&gt;</span> (1: Nincs záró címke! 2: A képet ugyanabban a könyvtárban kell elhelyezni.)</td></tr>
+<tr><td>Külső/belső link</td><td><span>&lt;a href="http://valami.hu"&gt;szöveg&lt;/a&gt;</span>, <span>&lt;a href="fajl.html"&gt;szó&lt;/a&gt;</span></td></tr>
+<tr><td>Hivatkozási pont</td><td><span>&lt;a name="pont"&gt;&lt;/a&gt;</span></td></tr>
+<tr><td>Számozott lista</td><td><span>&lt;ol&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Valami&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Valami2&lt;/li&gt;<br>
+&lt;/ol&gt;</span></td></tr>
+<tr><td>Számozatlan lista</td><td><span>
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Valami&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Valami2&lt;/li&gt;<br>
+&lt;/ul&gt;</span></td></tr>
+<tr><td>Táblázat</td><td><span>&lt;table&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Bal fent&lt;/td&gt;&lt;td&gt;Jobb fent&lt;/td&gt;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;&lt;td&gt;Bal lent&lt;/td&gt;&lt;td&gt;Jobb lent&lt;/td&gt;&lt;/tr&gt;<br>
+&lt;/table&gt;</span></td></tr>
+<tr><td>Űrlap</td><td><span>
+&lt;form name="input" action="oldal.html" method="get"&gt;<br>
+&nbsp;&nbsp;&lt;label&gt;Vezetéknév&lt;/label&gt;<br>
+&nbsp;&nbsp;&lt;input type="text" name="vnev"&gt;<br>
+&nbsp;&nbsp;&lt;label&gt;Keresztnév&lt;/label&gt;<br>
+&nbsp;&nbsp;&lt;input type="text" name="knev"&gt;<br>
+&nbsp;&nbsp;&lt;input type="submit" value="Mehet"&gt;<br>
+&lt;/form&gt;
+</span></td></tr>
+</table>
+<br><a href="#top">Vissza az elejére</a>
+
+
+<h2><a name="css"></a>Stílustulajdonságok</h2>
+<div>Adott elem stílusának megadása: <span>&lt;div style="..."&gt;...&lt;/div&gt;</span> pl egy <span>div</span>
+elem stílusát adja meg, a <span>&lt;h1 style="..."&gt;...&lt;/h1&gt;</span> pedig egy <span>h1</span> típusú
+címét. A <span>style="..."</span> stílus-megadásba a <span>...</span> helyére az alábbiak szerint írhatunk
+tulajdonságokat.</div>
+<table>
+<tr><td>Szín</td><td><span>color: red;</span> vagy <span>color: #ff00ff;</span></td></tr>
+<tr><td>Háttérszín</td><td><span>background: blue;</span> vagy <span>background: #00ff00;</span></td></tr>
+<tr><td>Háttérkép</td><td><span>background-image: url('kepfajl.png');</span></td></tr>
+<tr><td>Keret</td><td><span>border-style:solid/dashed/dotted;<br>border-width:5px;<br>border-color:black;</span></td></tr>
+<tr><td>Méret</td><td><span>width: 10px;<br>height: 100px;</span></td></tr>
+<tr><td>Betűtípus</td><td><span>font-family: Arial/Courier/Times<br>font-size: 12px;<br>font-style: italic;<br>font-weight: bold;</span></td></tr>
+<tr><td>Margó/behúzás</td><td><span>margin: 10px;<br>padding: 20px;</span></td></tr>
+<tr><td>Szöveg igazítása</td><td><span>text-align: center/right/justify;</span></td></tr>
+<tr><td>Kép középre igazítása</td><td><span>display: block;<br>margin-left: auto;<br>margin-right: auto;<br></span></td></tr>
+<tr><td>Úsztatás</td><td><span>float: right/left;</span></td></tr>
+</table>
+<br><a href="#top">Vissza az elejére</a>
+
+
+<h2><a name="style"></a>Stílustulajdonságok megadása CSS fájlban</h2>
+<div>Készíteni kell egy valami.css nevű fájlt, és a HTML fájl fejlécét így kell módosítani,
+hogy tudjon az elkészített valami.css fájlról (csak a módosítandó sort írtam vastag betűvel)
+</div>
+<span class="lighter">
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2"&gt;<br></span><span>
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="valami.css" type="text/css"&gt;<br></span><span style="font-weight:lighter;">
+&nbsp;&nbsp;&lt;title&gt;Oldal címe&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+</span><br>
+A CSS fájl (valami.css) tartalma a következőhöz hasonló lehet:<br>
+<span>
+body {<br>
+&nbsp;&nbsp;background: #ff0ff0;<br>
+&nbsp;&nbsp;color: 	#00ff00;<br>
+&nbsp;&nbsp;font-size: 12pt;<br>
+&nbsp;&nbsp;margin: 0px;<br>
+&nbsp;&nbsp;padding: 10px;<br>
+}<br>
+h1 {<br>
+&nbsp;&nbsp;background: #00ff00;<br>
+&nbsp;&nbsp;color:      #ff0ff0;<br>
+}<br>
+a {<br>
+&nbsp;&nbsp;text-decoration: none;<br>
+&nbsp;&nbsp;font-weight: bold;<br>
+&nbsp;&nbsp;background: #00ff00;<br>
+&nbsp;&nbsp;color:      #ff0ff0;<br>
+}<br>
+a:hover {<br>
+&nbsp;&nbsp;background: #ff0ff0;<br>
+&nbsp;&nbsp;color:      #00ff00;<br>
+}<br>
+.kiemeles {<br>
+&nbsp;&nbsp;color: red;<br>
+&nbsp;&nbsp;background: yellow;<br>
+<br>
+}<br>
+</span>
+<ul>
+<li>megjegyzés: az utolsó előtti elem (<span>a:hover { ... }</span>) azt a lehetőséget mutatja,
+hogy ha felhasználó az egérrel a link fölé megy, arra az esetre más stílust is meg
+lehet adni. Ez a gyakran használt stílus-elem a linkek kiemelését segíti.</li>
+<li><a name="kiemeles"></a>
+2. megjegyzés: az utolsó elem (<span>.kiemeles { ... }</span> - figyeljünk a kezdő pontra) azt
+jelenti, hogy ezt a stílust (piros betű sárga háttér előtt) bármely elemre alkalmazhatjuk a
+HTML oldalunkon. Tegyük fel, hogy egy adott szöveget ezzel a stílussal akarunk ellátni (kiemelni),
+ezt a következőképpen tehetjük meg a HTML fájlban:<br>
+<span>&lt;p class="kiemeles"&gt;Szöveg ... szöveg ... &lt;/p&gt;</span><br>
+Ha csak a szöveg egy részére akarjuk alkalmazni:
+<span>&lt;p&gt;Normál szöveg ... &lt;span class="kiemeles"&gt;kiemelt szó&lt;/span&gt; ...&lt;/p&gt;</span>
+Hasonlóképpen bármely CSS stíluselemet megadhatunk a fenti módon, és alkalmazhatjuk azt egy tetszőleges HTML elemre.</li>
+</ul>
+<br><a href="#top">Vissza az elejére</a>
+
+<h2><a name="hexa"></a>HTML színkódok</h2>
+<table>
+  <tr>
+    <td style="width:40px; background:#000000; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c000000')" onmouseout="setinvisible('c000000')">&nbsp;<span id="c000000" style="visibility:hidden;">#000000</span></td>
+    <td style="width:40px; background:#003300; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c003300')" onmouseout="setinvisible('c003300')">&nbsp;<span id="c003300" style="visibility:hidden;">#003300</span></td>
+    <td style="width:40px; background:#006600; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c006600')" onmouseout="setinvisible('c006600')">&nbsp;<span id="c006600" style="visibility:hidden;">#006600</span></td>
+    <td style="width:40px; background:#009900; color:#000000; font-size:0.8em;" onmouseover="setvisible('c009900')" onmouseout="setinvisible('c009900')">&nbsp;<span id="c009900" style="visibility:hidden;">#009900</span></td>
+    <td style="width:40px; background:#00cc00; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00cc00')" onmouseout="setinvisible('c00cc00')">&nbsp;<span id="c00cc00" style="visibility:hidden;">#00cc00</span></td>
+    <td style="width:40px; background:#00ff00; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00ff00')" onmouseout="setinvisible('c00ff00')">&nbsp;<span id="c00ff00" style="visibility:hidden;">#00ff00</span></td>
+    <td style="width:40px; background:#330000; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c330000')" onmouseout="setinvisible('c330000')">&nbsp;<span id="c330000" style="visibility:hidden;">#330000</span></td>
+    <td style="width:40px; background:#333300; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c333300')" onmouseout="setinvisible('c333300')">&nbsp;<span id="c333300" style="visibility:hidden;">#333300</span></td>
+    <td style="width:40px; background:#336600; color:#000000; font-size:0.8em;" onmouseover="setvisible('c336600')" onmouseout="setinvisible('c336600')">&nbsp;<span id="c336600" style="visibility:hidden;">#336600</span></td>
+    <td style="width:40px; background:#339900; color:#000000; font-size:0.8em;" onmouseover="setvisible('c339900')" onmouseout="setinvisible('c339900')">&nbsp;<span id="c339900" style="visibility:hidden;">#339900</span></td>
+    <td style="width:40px; background:#33cc00; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33cc00')" onmouseout="setinvisible('c33cc00')">&nbsp;<span id="c33cc00" style="visibility:hidden;">#33cc00</span></td>
+    <td style="width:40px; background:#33ff00; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33ff00')" onmouseout="setinvisible('c33ff00')">&nbsp;<span id="c33ff00" style="visibility:hidden;">#33ff00</span></td>
+    <td style="width:40px; background:#660000; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c660000')" onmouseout="setinvisible('c660000')">&nbsp;<span id="c660000" style="visibility:hidden;">#660000</span></td>
+    <td style="width:40px; background:#663300; color:#000000; font-size:0.8em;" onmouseover="setvisible('c663300')" onmouseout="setinvisible('c663300')">&nbsp;<span id="c663300" style="visibility:hidden;">#663300</span></td>
+    <td style="width:40px; background:#666600; color:#000000; font-size:0.8em;" onmouseover="setvisible('c666600')" onmouseout="setinvisible('c666600')">&nbsp;<span id="c666600" style="visibility:hidden;">#666600</span></td>
+    <td style="width:40px; background:#669900; color:#000000; font-size:0.8em;" onmouseover="setvisible('c669900')" onmouseout="setinvisible('c669900')">&nbsp;<span id="c669900" style="visibility:hidden;">#669900</span></td>
+    <td style="width:40px; background:#66cc00; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66cc00')" onmouseout="setinvisible('c66cc00')">&nbsp;<span id="c66cc00" style="visibility:hidden;">#66cc00</span></td>
+    <td style="width:40px; background:#66ff00; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66ff00')" onmouseout="setinvisible('c66ff00')">&nbsp;<span id="c66ff00" style="visibility:hidden;">#66ff00</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#990000; color:#000000; font-size:0.8em;" onmouseover="setvisible('c990000')" onmouseout="setinvisible('c990000')">&nbsp;<span id="c990000" style="visibility:hidden;">#990000</span></td>
+    <td style="width:40px; background:#993300; color:#000000; font-size:0.8em;" onmouseover="setvisible('c993300')" onmouseout="setinvisible('c993300')">&nbsp;<span id="c993300" style="visibility:hidden;">#993300</span></td>
+    <td style="width:40px; background:#996600; color:#000000; font-size:0.8em;" onmouseover="setvisible('c996600')" onmouseout="setinvisible('c996600')">&nbsp;<span id="c996600" style="visibility:hidden;">#996600</span></td>
+    <td style="width:40px; background:#999900; color:#000000; font-size:0.8em;" onmouseover="setvisible('c999900')" onmouseout="setinvisible('c999900')">&nbsp;<span id="c999900" style="visibility:hidden;">#999900</span></td>
+    <td style="width:40px; background:#99cc00; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99cc00')" onmouseout="setinvisible('c99cc00')">&nbsp;<span id="c99cc00" style="visibility:hidden;">#99cc00</span></td>
+    <td style="width:40px; background:#99ff00; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99ff00')" onmouseout="setinvisible('c99ff00')">&nbsp;<span id="c99ff00" style="visibility:hidden;">#99ff00</span></td>
+    <td style="width:40px; background:#cc0000; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc0000')" onmouseout="setinvisible('ccc0000')">&nbsp;<span id="ccc0000" style="visibility:hidden;">#cc0000</span></td>
+    <td style="width:40px; background:#cc3300; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc3300')" onmouseout="setinvisible('ccc3300')">&nbsp;<span id="ccc3300" style="visibility:hidden;">#cc3300</span></td>
+    <td style="width:40px; background:#cc6600; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc6600')" onmouseout="setinvisible('ccc6600')">&nbsp;<span id="ccc6600" style="visibility:hidden;">#cc6600</span></td>
+    <td style="width:40px; background:#cc9900; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc9900')" onmouseout="setinvisible('ccc9900')">&nbsp;<span id="ccc9900" style="visibility:hidden;">#cc9900</span></td>
+    <td style="width:40px; background:#cccc00; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccccc00')" onmouseout="setinvisible('ccccc00')">&nbsp;<span id="ccccc00" style="visibility:hidden;">#cccc00</span></td>
+    <td style="width:40px; background:#ccff00; color:#000000; font-size:0.8em;" onmouseover="setvisible('cccff00')" onmouseout="setinvisible('cccff00')">&nbsp;<span id="cccff00" style="visibility:hidden;">#ccff00</span></td>
+    <td style="width:40px; background:#ff0000; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff0000')" onmouseout="setinvisible('cff0000')">&nbsp;<span id="cff0000" style="visibility:hidden;">#ff0000</span></td>
+    <td style="width:40px; background:#ff3300; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff3300')" onmouseout="setinvisible('cff3300')">&nbsp;<span id="cff3300" style="visibility:hidden;">#ff3300</span></td>
+    <td style="width:40px; background:#ff6600; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff6600')" onmouseout="setinvisible('cff6600')">&nbsp;<span id="cff6600" style="visibility:hidden;">#ff6600</span></td>
+    <td style="width:40px; background:#ff9900; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff9900')" onmouseout="setinvisible('cff9900')">&nbsp;<span id="cff9900" style="visibility:hidden;">#ff9900</span></td>
+    <td style="width:40px; background:#ffcc00; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffcc00')" onmouseout="setinvisible('cffcc00')">&nbsp;<span id="cffcc00" style="visibility:hidden;">#ffcc00</span></td>
+    <td style="width:40px; background:#ffff00; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffff00')" onmouseout="setinvisible('cffff00')">&nbsp;<span id="cffff00" style="visibility:hidden;">#ffff00</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#000033; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c000033')" onmouseout="setinvisible('c000033')">&nbsp;<span id="c000033" style="visibility:hidden;">#000033</span></td>
+    <td style="width:40px; background:#003333; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c003333')" onmouseout="setinvisible('c003333')">&nbsp;<span id="c003333" style="visibility:hidden;">#003333</span></td>
+    <td style="width:40px; background:#006633; color:#000000; font-size:0.8em;" onmouseover="setvisible('c006633')" onmouseout="setinvisible('c006633')">&nbsp;<span id="c006633" style="visibility:hidden;">#006633</span></td>
+    <td style="width:40px; background:#009933; color:#000000; font-size:0.8em;" onmouseover="setvisible('c009933')" onmouseout="setinvisible('c009933')">&nbsp;<span id="c009933" style="visibility:hidden;">#009933</span></td>
+    <td style="width:40px; background:#00cc33; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00cc33')" onmouseout="setinvisible('c00cc33')">&nbsp;<span id="c00cc33" style="visibility:hidden;">#00cc33</span></td>
+    <td style="width:40px; background:#00ff33; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00ff33')" onmouseout="setinvisible('c00ff33')">&nbsp;<span id="c00ff33" style="visibility:hidden;">#00ff33</span></td>
+    <td style="width:40px; background:#330033; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c330033')" onmouseout="setinvisible('c330033')">&nbsp;<span id="c330033" style="visibility:hidden;">#330033</span></td>
+    <td style="width:40px; background:#333333; color:#000000; font-size:0.8em;" onmouseover="setvisible('c333333')" onmouseout="setinvisible('c333333')">&nbsp;<span id="c333333" style="visibility:hidden;">#333333</span></td>
+    <td style="width:40px; background:#336633; color:#000000; font-size:0.8em;" onmouseover="setvisible('c336633')" onmouseout="setinvisible('c336633')">&nbsp;<span id="c336633" style="visibility:hidden;">#336633</span></td>
+    <td style="width:40px; background:#339933; color:#000000; font-size:0.8em;" onmouseover="setvisible('c339933')" onmouseout="setinvisible('c339933')">&nbsp;<span id="c339933" style="visibility:hidden;">#339933</span></td>
+    <td style="width:40px; background:#33cc33; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33cc33')" onmouseout="setinvisible('c33cc33')">&nbsp;<span id="c33cc33" style="visibility:hidden;">#33cc33</span></td>
+    <td style="width:40px; background:#33ff33; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33ff33')" onmouseout="setinvisible('c33ff33')">&nbsp;<span id="c33ff33" style="visibility:hidden;">#33ff33</span></td>
+    <td style="width:40px; background:#660033; color:#000000; font-size:0.8em;" onmouseover="setvisible('c660033')" onmouseout="setinvisible('c660033')">&nbsp;<span id="c660033" style="visibility:hidden;">#660033</span></td>
+    <td style="width:40px; background:#663333; color:#000000; font-size:0.8em;" onmouseover="setvisible('c663333')" onmouseout="setinvisible('c663333')">&nbsp;<span id="c663333" style="visibility:hidden;">#663333</span></td>
+    <td style="width:40px; background:#666633; color:#000000; font-size:0.8em;" onmouseover="setvisible('c666633')" onmouseout="setinvisible('c666633')">&nbsp;<span id="c666633" style="visibility:hidden;">#666633</span></td>
+    <td style="width:40px; background:#669933; color:#000000; font-size:0.8em;" onmouseover="setvisible('c669933')" onmouseout="setinvisible('c669933')">&nbsp;<span id="c669933" style="visibility:hidden;">#669933</span></td>
+    <td style="width:40px; background:#66cc33; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66cc33')" onmouseout="setinvisible('c66cc33')">&nbsp;<span id="c66cc33" style="visibility:hidden;">#66cc33</span></td>
+    <td style="width:40px; background:#66ff33; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66ff33')" onmouseout="setinvisible('c66ff33')">&nbsp;<span id="c66ff33" style="visibility:hidden;">#66ff33</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#990033; color:#000000; font-size:0.8em;" onmouseover="setvisible('c990033')" onmouseout="setinvisible('c990033')">&nbsp;<span id="c990033" style="visibility:hidden;">#990033</span></td>
+    <td style="width:40px; background:#993333; color:#000000; font-size:0.8em;" onmouseover="setvisible('c993333')" onmouseout="setinvisible('c993333')">&nbsp;<span id="c993333" style="visibility:hidden;">#993333</span></td>
+    <td style="width:40px; background:#996633; color:#000000; font-size:0.8em;" onmouseover="setvisible('c996633')" onmouseout="setinvisible('c996633')">&nbsp;<span id="c996633" style="visibility:hidden;">#996633</span></td>
+    <td style="width:40px; background:#999933; color:#000000; font-size:0.8em;" onmouseover="setvisible('c999933')" onmouseout="setinvisible('c999933')">&nbsp;<span id="c999933" style="visibility:hidden;">#999933</span></td>
+    <td style="width:40px; background:#99cc33; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99cc33')" onmouseout="setinvisible('c99cc33')">&nbsp;<span id="c99cc33" style="visibility:hidden;">#99cc33</span></td>
+    <td style="width:40px; background:#99ff33; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99ff33')" onmouseout="setinvisible('c99ff33')">&nbsp;<span id="c99ff33" style="visibility:hidden;">#99ff33</span></td>
+    <td style="width:40px; background:#cc0033; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc0033')" onmouseout="setinvisible('ccc0033')">&nbsp;<span id="ccc0033" style="visibility:hidden;">#cc0033</span></td>
+    <td style="width:40px; background:#cc3333; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc3333')" onmouseout="setinvisible('ccc3333')">&nbsp;<span id="ccc3333" style="visibility:hidden;">#cc3333</span></td>
+    <td style="width:40px; background:#cc6633; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc6633')" onmouseout="setinvisible('ccc6633')">&nbsp;<span id="ccc6633" style="visibility:hidden;">#cc6633</span></td>
+    <td style="width:40px; background:#cc9933; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc9933')" onmouseout="setinvisible('ccc9933')">&nbsp;<span id="ccc9933" style="visibility:hidden;">#cc9933</span></td>
+    <td style="width:40px; background:#cccc33; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccccc33')" onmouseout="setinvisible('ccccc33')">&nbsp;<span id="ccccc33" style="visibility:hidden;">#cccc33</span></td>
+    <td style="width:40px; background:#ccff33; color:#000000; font-size:0.8em;" onmouseover="setvisible('cccff33')" onmouseout="setinvisible('cccff33')">&nbsp;<span id="cccff33" style="visibility:hidden;">#ccff33</span></td>
+    <td style="width:40px; background:#ff0033; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff0033')" onmouseout="setinvisible('cff0033')">&nbsp;<span id="cff0033" style="visibility:hidden;">#ff0033</span></td>
+    <td style="width:40px; background:#ff3333; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff3333')" onmouseout="setinvisible('cff3333')">&nbsp;<span id="cff3333" style="visibility:hidden;">#ff3333</span></td>
+    <td style="width:40px; background:#ff6633; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff6633')" onmouseout="setinvisible('cff6633')">&nbsp;<span id="cff6633" style="visibility:hidden;">#ff6633</span></td>
+    <td style="width:40px; background:#ff9933; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff9933')" onmouseout="setinvisible('cff9933')">&nbsp;<span id="cff9933" style="visibility:hidden;">#ff9933</span></td>
+    <td style="width:40px; background:#ffcc33; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffcc33')" onmouseout="setinvisible('cffcc33')">&nbsp;<span id="cffcc33" style="visibility:hidden;">#ffcc33</span></td>
+    <td style="width:40px; background:#ffff33; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffff33')" onmouseout="setinvisible('cffff33')">&nbsp;<span id="cffff33" style="visibility:hidden;">#ffff33</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#000066; color:#ffffff; font-size:0.8em;" onmouseover="setvisible('c000066')" onmouseout="setinvisible('c000066')">&nbsp;<span id="c000066" style="visibility:hidden;">#000066</span></td>
+    <td style="width:40px; background:#003366; color:#000000; font-size:0.8em;" onmouseover="setvisible('c003366')" onmouseout="setinvisible('c003366')">&nbsp;<span id="c003366" style="visibility:hidden;">#003366</span></td>
+    <td style="width:40px; background:#006666; color:#000000; font-size:0.8em;" onmouseover="setvisible('c006666')" onmouseout="setinvisible('c006666')">&nbsp;<span id="c006666" style="visibility:hidden;">#006666</span></td>
+    <td style="width:40px; background:#009966; color:#000000; font-size:0.8em;" onmouseover="setvisible('c009966')" onmouseout="setinvisible('c009966')">&nbsp;<span id="c009966" style="visibility:hidden;">#009966</span></td>
+    <td style="width:40px; background:#00cc66; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00cc66')" onmouseout="setinvisible('c00cc66')">&nbsp;<span id="c00cc66" style="visibility:hidden;">#00cc66</span></td>
+    <td style="width:40px; background:#00ff66; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00ff66')" onmouseout="setinvisible('c00ff66')">&nbsp;<span id="c00ff66" style="visibility:hidden;">#00ff66</span></td>
+    <td style="width:40px; background:#330066; color:#000000; font-size:0.8em;" onmouseover="setvisible('c330066')" onmouseout="setinvisible('c330066')">&nbsp;<span id="c330066" style="visibility:hidden;">#330066</span></td>
+    <td style="width:40px; background:#333366; color:#000000; font-size:0.8em;" onmouseover="setvisible('c333366')" onmouseout="setinvisible('c333366')">&nbsp;<span id="c333366" style="visibility:hidden;">#333366</span></td>
+    <td style="width:40px; background:#336666; color:#000000; font-size:0.8em;" onmouseover="setvisible('c336666')" onmouseout="setinvisible('c336666')">&nbsp;<span id="c336666" style="visibility:hidden;">#336666</span></td>
+    <td style="width:40px; background:#339966; color:#000000; font-size:0.8em;" onmouseover="setvisible('c339966')" onmouseout="setinvisible('c339966')">&nbsp;<span id="c339966" style="visibility:hidden;">#339966</span></td>
+    <td style="width:40px; background:#33cc66; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33cc66')" onmouseout="setinvisible('c33cc66')">&nbsp;<span id="c33cc66" style="visibility:hidden;">#33cc66</span></td>
+    <td style="width:40px; background:#33ff66; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33ff66')" onmouseout="setinvisible('c33ff66')">&nbsp;<span id="c33ff66" style="visibility:hidden;">#33ff66</span></td>
+    <td style="width:40px; background:#660066; color:#000000; font-size:0.8em;" onmouseover="setvisible('c660066')" onmouseout="setinvisible('c660066')">&nbsp;<span id="c660066" style="visibility:hidden;">#660066</span></td>
+    <td style="width:40px; background:#663366; color:#000000; font-size:0.8em;" onmouseover="setvisible('c663366')" onmouseout="setinvisible('c663366')">&nbsp;<span id="c663366" style="visibility:hidden;">#663366</span></td>
+    <td style="width:40px; background:#666666; color:#000000; font-size:0.8em;" onmouseover="setvisible('c666666')" onmouseout="setinvisible('c666666')">&nbsp;<span id="c666666" style="visibility:hidden;">#666666</span></td>
+    <td style="width:40px; background:#669966; color:#000000; font-size:0.8em;" onmouseover="setvisible('c669966')" onmouseout="setinvisible('c669966')">&nbsp;<span id="c669966" style="visibility:hidden;">#669966</span></td>
+    <td style="width:40px; background:#66cc66; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66cc66')" onmouseout="setinvisible('c66cc66')">&nbsp;<span id="c66cc66" style="visibility:hidden;">#66cc66</span></td>
+    <td style="width:40px; background:#66ff66; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66ff66')" onmouseout="setinvisible('c66ff66')">&nbsp;<span id="c66ff66" style="visibility:hidden;">#66ff66</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#990066; color:#000000; font-size:0.8em;" onmouseover="setvisible('c990066')" onmouseout="setinvisible('c990066')">&nbsp;<span id="c990066" style="visibility:hidden;">#990066</span></td>
+    <td style="width:40px; background:#993366; color:#000000; font-size:0.8em;" onmouseover="setvisible('c993366')" onmouseout="setinvisible('c993366')">&nbsp;<span id="c993366" style="visibility:hidden;">#993366</span></td>
+    <td style="width:40px; background:#996666; color:#000000; font-size:0.8em;" onmouseover="setvisible('c996666')" onmouseout="setinvisible('c996666')">&nbsp;<span id="c996666" style="visibility:hidden;">#996666</span></td>
+    <td style="width:40px; background:#999966; color:#000000; font-size:0.8em;" onmouseover="setvisible('c999966')" onmouseout="setinvisible('c999966')">&nbsp;<span id="c999966" style="visibility:hidden;">#999966</span></td>
+    <td style="width:40px; background:#99cc66; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99cc66')" onmouseout="setinvisible('c99cc66')">&nbsp;<span id="c99cc66" style="visibility:hidden;">#99cc66</span></td>
+    <td style="width:40px; background:#99ff66; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99ff66')" onmouseout="setinvisible('c99ff66')">&nbsp;<span id="c99ff66" style="visibility:hidden;">#99ff66</span></td>
+    <td style="width:40px; background:#cc0066; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc0066')" onmouseout="setinvisible('ccc0066')">&nbsp;<span id="ccc0066" style="visibility:hidden;">#cc0066</span></td>
+    <td style="width:40px; background:#cc3366; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc3366')" onmouseout="setinvisible('ccc3366')">&nbsp;<span id="ccc3366" style="visibility:hidden;">#cc3366</span></td>
+    <td style="width:40px; background:#cc6666; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc6666')" onmouseout="setinvisible('ccc6666')">&nbsp;<span id="ccc6666" style="visibility:hidden;">#cc6666</span></td>
+    <td style="width:40px; background:#cc9966; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc9966')" onmouseout="setinvisible('ccc9966')">&nbsp;<span id="ccc9966" style="visibility:hidden;">#cc9966</span></td>
+    <td style="width:40px; background:#cccc66; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccccc66')" onmouseout="setinvisible('ccccc66')">&nbsp;<span id="ccccc66" style="visibility:hidden;">#cccc66</span></td>
+    <td style="width:40px; background:#ccff66; color:#000000; font-size:0.8em;" onmouseover="setvisible('cccff66')" onmouseout="setinvisible('cccff66')">&nbsp;<span id="cccff66" style="visibility:hidden;">#ccff66</span></td>
+    <td style="width:40px; background:#ff0066; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff0066')" onmouseout="setinvisible('cff0066')">&nbsp;<span id="cff0066" style="visibility:hidden;">#ff0066</span></td>
+    <td style="width:40px; background:#ff3366; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff3366')" onmouseout="setinvisible('cff3366')">&nbsp;<span id="cff3366" style="visibility:hidden;">#ff3366</span></td>
+    <td style="width:40px; background:#ff6666; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff6666')" onmouseout="setinvisible('cff6666')">&nbsp;<span id="cff6666" style="visibility:hidden;">#ff6666</span></td>
+    <td style="width:40px; background:#ff9966; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff9966')" onmouseout="setinvisible('cff9966')">&nbsp;<span id="cff9966" style="visibility:hidden;">#ff9966</span></td>
+    <td style="width:40px; background:#ffcc66; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffcc66')" onmouseout="setinvisible('cffcc66')">&nbsp;<span id="cffcc66" style="visibility:hidden;">#ffcc66</span></td>
+    <td style="width:40px; background:#ffff66; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffff66')" onmouseout="setinvisible('cffff66')">&nbsp;<span id="cffff66" style="visibility:hidden;">#ffff66</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#000099; color:#000000; font-size:0.8em;" onmouseover="setvisible('c000099')" onmouseout="setinvisible('c000099')">&nbsp;<span id="c000099" style="visibility:hidden;">#000099</span></td>
+    <td style="width:40px; background:#003399; color:#000000; font-size:0.8em;" onmouseover="setvisible('c003399')" onmouseout="setinvisible('c003399')">&nbsp;<span id="c003399" style="visibility:hidden;">#003399</span></td>
+    <td style="width:40px; background:#006699; color:#000000; font-size:0.8em;" onmouseover="setvisible('c006699')" onmouseout="setinvisible('c006699')">&nbsp;<span id="c006699" style="visibility:hidden;">#006699</span></td>
+    <td style="width:40px; background:#009999; color:#000000; font-size:0.8em;" onmouseover="setvisible('c009999')" onmouseout="setinvisible('c009999')">&nbsp;<span id="c009999" style="visibility:hidden;">#009999</span></td>
+    <td style="width:40px; background:#00cc99; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00cc99')" onmouseout="setinvisible('c00cc99')">&nbsp;<span id="c00cc99" style="visibility:hidden;">#00cc99</span></td>
+    <td style="width:40px; background:#00ff99; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00ff99')" onmouseout="setinvisible('c00ff99')">&nbsp;<span id="c00ff99" style="visibility:hidden;">#00ff99</span></td>
+    <td style="width:40px; background:#330099; color:#000000; font-size:0.8em;" onmouseover="setvisible('c330099')" onmouseout="setinvisible('c330099')">&nbsp;<span id="c330099" style="visibility:hidden;">#330099</span></td>
+    <td style="width:40px; background:#333399; color:#000000; font-size:0.8em;" onmouseover="setvisible('c333399')" onmouseout="setinvisible('c333399')">&nbsp;<span id="c333399" style="visibility:hidden;">#333399</span></td>
+    <td style="width:40px; background:#336699; color:#000000; font-size:0.8em;" onmouseover="setvisible('c336699')" onmouseout="setinvisible('c336699')">&nbsp;<span id="c336699" style="visibility:hidden;">#336699</span></td>
+    <td style="width:40px; background:#339999; color:#000000; font-size:0.8em;" onmouseover="setvisible('c339999')" onmouseout="setinvisible('c339999')">&nbsp;<span id="c339999" style="visibility:hidden;">#339999</span></td>
+    <td style="width:40px; background:#33cc99; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33cc99')" onmouseout="setinvisible('c33cc99')">&nbsp;<span id="c33cc99" style="visibility:hidden;">#33cc99</span></td>
+    <td style="width:40px; background:#33ff99; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33ff99')" onmouseout="setinvisible('c33ff99')">&nbsp;<span id="c33ff99" style="visibility:hidden;">#33ff99</span></td>
+    <td style="width:40px; background:#660099; color:#000000; font-size:0.8em;" onmouseover="setvisible('c660099')" onmouseout="setinvisible('c660099')">&nbsp;<span id="c660099" style="visibility:hidden;">#660099</span></td>
+    <td style="width:40px; background:#663399; color:#000000; font-size:0.8em;" onmouseover="setvisible('c663399')" onmouseout="setinvisible('c663399')">&nbsp;<span id="c663399" style="visibility:hidden;">#663399</span></td>
+    <td style="width:40px; background:#666699; color:#000000; font-size:0.8em;" onmouseover="setvisible('c666699')" onmouseout="setinvisible('c666699')">&nbsp;<span id="c666699" style="visibility:hidden;">#666699</span></td>
+    <td style="width:40px; background:#669999; color:#000000; font-size:0.8em;" onmouseover="setvisible('c669999')" onmouseout="setinvisible('c669999')">&nbsp;<span id="c669999" style="visibility:hidden;">#669999</span></td>
+    <td style="width:40px; background:#66cc99; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66cc99')" onmouseout="setinvisible('c66cc99')">&nbsp;<span id="c66cc99" style="visibility:hidden;">#66cc99</span></td>
+    <td style="width:40px; background:#66ff99; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66ff99')" onmouseout="setinvisible('c66ff99')">&nbsp;<span id="c66ff99" style="visibility:hidden;">#66ff99</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#990099; color:#000000; font-size:0.8em;" onmouseover="setvisible('c990099')" onmouseout="setinvisible('c990099')">&nbsp;<span id="c990099" style="visibility:hidden;">#990099</span></td>
+    <td style="width:40px; background:#993399; color:#000000; font-size:0.8em;" onmouseover="setvisible('c993399')" onmouseout="setinvisible('c993399')">&nbsp;<span id="c993399" style="visibility:hidden;">#993399</span></td>
+    <td style="width:40px; background:#996699; color:#000000; font-size:0.8em;" onmouseover="setvisible('c996699')" onmouseout="setinvisible('c996699')">&nbsp;<span id="c996699" style="visibility:hidden;">#996699</span></td>
+    <td style="width:40px; background:#999999; color:#000000; font-size:0.8em;" onmouseover="setvisible('c999999')" onmouseout="setinvisible('c999999')">&nbsp;<span id="c999999" style="visibility:hidden;">#999999</span></td>
+    <td style="width:40px; background:#99cc99; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99cc99')" onmouseout="setinvisible('c99cc99')">&nbsp;<span id="c99cc99" style="visibility:hidden;">#99cc99</span></td>
+    <td style="width:40px; background:#99ff99; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99ff99')" onmouseout="setinvisible('c99ff99')">&nbsp;<span id="c99ff99" style="visibility:hidden;">#99ff99</span></td>
+    <td style="width:40px; background:#cc0099; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc0099')" onmouseout="setinvisible('ccc0099')">&nbsp;<span id="ccc0099" style="visibility:hidden;">#cc0099</span></td>
+    <td style="width:40px; background:#cc3399; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc3399')" onmouseout="setinvisible('ccc3399')">&nbsp;<span id="ccc3399" style="visibility:hidden;">#cc3399</span></td>
+    <td style="width:40px; background:#cc6699; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc6699')" onmouseout="setinvisible('ccc6699')">&nbsp;<span id="ccc6699" style="visibility:hidden;">#cc6699</span></td>
+    <td style="width:40px; background:#cc9999; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc9999')" onmouseout="setinvisible('ccc9999')">&nbsp;<span id="ccc9999" style="visibility:hidden;">#cc9999</span></td>
+    <td style="width:40px; background:#cccc99; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccccc99')" onmouseout="setinvisible('ccccc99')">&nbsp;<span id="ccccc99" style="visibility:hidden;">#cccc99</span></td>
+    <td style="width:40px; background:#ccff99; color:#000000; font-size:0.8em;" onmouseover="setvisible('cccff99')" onmouseout="setinvisible('cccff99')">&nbsp;<span id="cccff99" style="visibility:hidden;">#ccff99</span></td>
+    <td style="width:40px; background:#ff0099; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff0099')" onmouseout="setinvisible('cff0099')">&nbsp;<span id="cff0099" style="visibility:hidden;">#ff0099</span></td>
+    <td style="width:40px; background:#ff3399; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff3399')" onmouseout="setinvisible('cff3399')">&nbsp;<span id="cff3399" style="visibility:hidden;">#ff3399</span></td>
+    <td style="width:40px; background:#ff6699; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff6699')" onmouseout="setinvisible('cff6699')">&nbsp;<span id="cff6699" style="visibility:hidden;">#ff6699</span></td>
+    <td style="width:40px; background:#ff9999; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff9999')" onmouseout="setinvisible('cff9999')">&nbsp;<span id="cff9999" style="visibility:hidden;">#ff9999</span></td>
+    <td style="width:40px; background:#ffcc99; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffcc99')" onmouseout="setinvisible('cffcc99')">&nbsp;<span id="cffcc99" style="visibility:hidden;">#ffcc99</span></td>
+    <td style="width:40px; background:#ffff99; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffff99')" onmouseout="setinvisible('cffff99')">&nbsp;<span id="cffff99" style="visibility:hidden;">#ffff99</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#0000cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c0000cc')" onmouseout="setinvisible('c0000cc')">&nbsp;<span id="c0000cc" style="visibility:hidden;">#0000cc</span></td>
+    <td style="width:40px; background:#0033cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c0033cc')" onmouseout="setinvisible('c0033cc')">&nbsp;<span id="c0033cc" style="visibility:hidden;">#0033cc</span></td>
+    <td style="width:40px; background:#0066cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c0066cc')" onmouseout="setinvisible('c0066cc')">&nbsp;<span id="c0066cc" style="visibility:hidden;">#0066cc</span></td>
+    <td style="width:40px; background:#0099cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c0099cc')" onmouseout="setinvisible('c0099cc')">&nbsp;<span id="c0099cc" style="visibility:hidden;">#0099cc</span></td>
+    <td style="width:40px; background:#00cccc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00cccc')" onmouseout="setinvisible('c00cccc')">&nbsp;<span id="c00cccc" style="visibility:hidden;">#00cccc</span></td>
+    <td style="width:40px; background:#00ffcc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00ffcc')" onmouseout="setinvisible('c00ffcc')">&nbsp;<span id="c00ffcc" style="visibility:hidden;">#00ffcc</span></td>
+    <td style="width:40px; background:#3300cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c3300cc')" onmouseout="setinvisible('c3300cc')">&nbsp;<span id="c3300cc" style="visibility:hidden;">#3300cc</span></td>
+    <td style="width:40px; background:#3333cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c3333cc')" onmouseout="setinvisible('c3333cc')">&nbsp;<span id="c3333cc" style="visibility:hidden;">#3333cc</span></td>
+    <td style="width:40px; background:#3366cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c3366cc')" onmouseout="setinvisible('c3366cc')">&nbsp;<span id="c3366cc" style="visibility:hidden;">#3366cc</span></td>
+    <td style="width:40px; background:#3399cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c3399cc')" onmouseout="setinvisible('c3399cc')">&nbsp;<span id="c3399cc" style="visibility:hidden;">#3399cc</span></td>
+    <td style="width:40px; background:#33cccc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33cccc')" onmouseout="setinvisible('c33cccc')">&nbsp;<span id="c33cccc" style="visibility:hidden;">#33cccc</span></td>
+    <td style="width:40px; background:#33ffcc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33ffcc')" onmouseout="setinvisible('c33ffcc')">&nbsp;<span id="c33ffcc" style="visibility:hidden;">#33ffcc</span></td>
+    <td style="width:40px; background:#6600cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c6600cc')" onmouseout="setinvisible('c6600cc')">&nbsp;<span id="c6600cc" style="visibility:hidden;">#6600cc</span></td>
+    <td style="width:40px; background:#6633cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c6633cc')" onmouseout="setinvisible('c6633cc')">&nbsp;<span id="c6633cc" style="visibility:hidden;">#6633cc</span></td>
+    <td style="width:40px; background:#6666cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c6666cc')" onmouseout="setinvisible('c6666cc')">&nbsp;<span id="c6666cc" style="visibility:hidden;">#6666cc</span></td>
+    <td style="width:40px; background:#6699cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c6699cc')" onmouseout="setinvisible('c6699cc')">&nbsp;<span id="c6699cc" style="visibility:hidden;">#6699cc</span></td>
+    <td style="width:40px; background:#66cccc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66cccc')" onmouseout="setinvisible('c66cccc')">&nbsp;<span id="c66cccc" style="visibility:hidden;">#66cccc</span></td>
+    <td style="width:40px; background:#66ffcc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66ffcc')" onmouseout="setinvisible('c66ffcc')">&nbsp;<span id="c66ffcc" style="visibility:hidden;">#66ffcc</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#9900cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c9900cc')" onmouseout="setinvisible('c9900cc')">&nbsp;<span id="c9900cc" style="visibility:hidden;">#9900cc</span></td>
+    <td style="width:40px; background:#9933cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c9933cc')" onmouseout="setinvisible('c9933cc')">&nbsp;<span id="c9933cc" style="visibility:hidden;">#9933cc</span></td>
+    <td style="width:40px; background:#9966cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c9966cc')" onmouseout="setinvisible('c9966cc')">&nbsp;<span id="c9966cc" style="visibility:hidden;">#9966cc</span></td>
+    <td style="width:40px; background:#9999cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c9999cc')" onmouseout="setinvisible('c9999cc')">&nbsp;<span id="c9999cc" style="visibility:hidden;">#9999cc</span></td>
+    <td style="width:40px; background:#99cccc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99cccc')" onmouseout="setinvisible('c99cccc')">&nbsp;<span id="c99cccc" style="visibility:hidden;">#99cccc</span></td>
+    <td style="width:40px; background:#99ffcc; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99ffcc')" onmouseout="setinvisible('c99ffcc')">&nbsp;<span id="c99ffcc" style="visibility:hidden;">#99ffcc</span></td>
+    <td style="width:40px; background:#cc00cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc00cc')" onmouseout="setinvisible('ccc00cc')">&nbsp;<span id="ccc00cc" style="visibility:hidden;">#cc00cc</span></td>
+    <td style="width:40px; background:#cc33cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc33cc')" onmouseout="setinvisible('ccc33cc')">&nbsp;<span id="ccc33cc" style="visibility:hidden;">#cc33cc</span></td>
+    <td style="width:40px; background:#cc66cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc66cc')" onmouseout="setinvisible('ccc66cc')">&nbsp;<span id="ccc66cc" style="visibility:hidden;">#cc66cc</span></td>
+    <td style="width:40px; background:#cc99cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc99cc')" onmouseout="setinvisible('ccc99cc')">&nbsp;<span id="ccc99cc" style="visibility:hidden;">#cc99cc</span></td>
+    <td style="width:40px; background:#cccccc; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccccccc')" onmouseout="setinvisible('ccccccc')">&nbsp;<span id="ccccccc" style="visibility:hidden;">#cccccc</span></td>
+    <td style="width:40px; background:#ccffcc; color:#000000; font-size:0.8em;" onmouseover="setvisible('cccffcc')" onmouseout="setinvisible('cccffcc')">&nbsp;<span id="cccffcc" style="visibility:hidden;">#ccffcc</span></td>
+    <td style="width:40px; background:#ff00cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff00cc')" onmouseout="setinvisible('cff00cc')">&nbsp;<span id="cff00cc" style="visibility:hidden;">#ff00cc</span></td>
+    <td style="width:40px; background:#ff33cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff33cc')" onmouseout="setinvisible('cff33cc')">&nbsp;<span id="cff33cc" style="visibility:hidden;">#ff33cc</span></td>
+    <td style="width:40px; background:#ff66cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff66cc')" onmouseout="setinvisible('cff66cc')">&nbsp;<span id="cff66cc" style="visibility:hidden;">#ff66cc</span></td>
+    <td style="width:40px; background:#ff99cc; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff99cc')" onmouseout="setinvisible('cff99cc')">&nbsp;<span id="cff99cc" style="visibility:hidden;">#ff99cc</span></td>
+    <td style="width:40px; background:#ffcccc; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffcccc')" onmouseout="setinvisible('cffcccc')">&nbsp;<span id="cffcccc" style="visibility:hidden;">#ffcccc</span></td>
+    <td style="width:40px; background:#ffffcc; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffffcc')" onmouseout="setinvisible('cffffcc')">&nbsp;<span id="cffffcc" style="visibility:hidden;">#ffffcc</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#0000ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c0000ff')" onmouseout="setinvisible('c0000ff')">&nbsp;<span id="c0000ff" style="visibility:hidden;">#0000ff</span></td>
+    <td style="width:40px; background:#0033ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c0033ff')" onmouseout="setinvisible('c0033ff')">&nbsp;<span id="c0033ff" style="visibility:hidden;">#0033ff</span></td>
+    <td style="width:40px; background:#0066ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c0066ff')" onmouseout="setinvisible('c0066ff')">&nbsp;<span id="c0066ff" style="visibility:hidden;">#0066ff</span></td>
+    <td style="width:40px; background:#0099ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c0099ff')" onmouseout="setinvisible('c0099ff')">&nbsp;<span id="c0099ff" style="visibility:hidden;">#0099ff</span></td>
+    <td style="width:40px; background:#00ccff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00ccff')" onmouseout="setinvisible('c00ccff')">&nbsp;<span id="c00ccff" style="visibility:hidden;">#00ccff</span></td>
+    <td style="width:40px; background:#00ffff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c00ffff')" onmouseout="setinvisible('c00ffff')">&nbsp;<span id="c00ffff" style="visibility:hidden;">#00ffff</span></td>
+    <td style="width:40px; background:#3300ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c3300ff')" onmouseout="setinvisible('c3300ff')">&nbsp;<span id="c3300ff" style="visibility:hidden;">#3300ff</span></td>
+    <td style="width:40px; background:#3333ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c3333ff')" onmouseout="setinvisible('c3333ff')">&nbsp;<span id="c3333ff" style="visibility:hidden;">#3333ff</span></td>
+    <td style="width:40px; background:#3366ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c3366ff')" onmouseout="setinvisible('c3366ff')">&nbsp;<span id="c3366ff" style="visibility:hidden;">#3366ff</span></td>
+    <td style="width:40px; background:#3399ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c3399ff')" onmouseout="setinvisible('c3399ff')">&nbsp;<span id="c3399ff" style="visibility:hidden;">#3399ff</span></td>
+    <td style="width:40px; background:#33ccff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33ccff')" onmouseout="setinvisible('c33ccff')">&nbsp;<span id="c33ccff" style="visibility:hidden;">#33ccff</span></td>
+    <td style="width:40px; background:#33ffff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c33ffff')" onmouseout="setinvisible('c33ffff')">&nbsp;<span id="c33ffff" style="visibility:hidden;">#33ffff</span></td>
+    <td style="width:40px; background:#6600ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c6600ff')" onmouseout="setinvisible('c6600ff')">&nbsp;<span id="c6600ff" style="visibility:hidden;">#6600ff</span></td>
+    <td style="width:40px; background:#6633ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c6633ff')" onmouseout="setinvisible('c6633ff')">&nbsp;<span id="c6633ff" style="visibility:hidden;">#6633ff</span></td>
+    <td style="width:40px; background:#6666ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c6666ff')" onmouseout="setinvisible('c6666ff')">&nbsp;<span id="c6666ff" style="visibility:hidden;">#6666ff</span></td>
+    <td style="width:40px; background:#6699ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c6699ff')" onmouseout="setinvisible('c6699ff')">&nbsp;<span id="c6699ff" style="visibility:hidden;">#6699ff</span></td>
+    <td style="width:40px; background:#66ccff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66ccff')" onmouseout="setinvisible('c66ccff')">&nbsp;<span id="c66ccff" style="visibility:hidden;">#66ccff</span></td>
+    <td style="width:40px; background:#66ffff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c66ffff')" onmouseout="setinvisible('c66ffff')">&nbsp;<span id="c66ffff" style="visibility:hidden;">#66ffff</span></td>
+  </tr>
+  <tr>
+    <td style="width:40px; background:#9900ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c9900ff')" onmouseout="setinvisible('c9900ff')">&nbsp;<span id="c9900ff" style="visibility:hidden;">#9900ff</span></td>
+    <td style="width:40px; background:#9933ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c9933ff')" onmouseout="setinvisible('c9933ff')">&nbsp;<span id="c9933ff" style="visibility:hidden;">#9933ff</span></td>
+    <td style="width:40px; background:#9966ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c9966ff')" onmouseout="setinvisible('c9966ff')">&nbsp;<span id="c9966ff" style="visibility:hidden;">#9966ff</span></td>
+    <td style="width:40px; background:#9999ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c9999ff')" onmouseout="setinvisible('c9999ff')">&nbsp;<span id="c9999ff" style="visibility:hidden;">#9999ff</span></td>
+    <td style="width:40px; background:#99ccff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99ccff')" onmouseout="setinvisible('c99ccff')">&nbsp;<span id="c99ccff" style="visibility:hidden;">#99ccff</span></td>
+    <td style="width:40px; background:#99ffff; color:#000000; font-size:0.8em;" onmouseover="setvisible('c99ffff')" onmouseout="setinvisible('c99ffff')">&nbsp;<span id="c99ffff" style="visibility:hidden;">#99ffff</span></td>
+    <td style="width:40px; background:#cc00ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc00ff')" onmouseout="setinvisible('ccc00ff')">&nbsp;<span id="ccc00ff" style="visibility:hidden;">#cc00ff</span></td>
+    <td style="width:40px; background:#cc33ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc33ff')" onmouseout="setinvisible('ccc33ff')">&nbsp;<span id="ccc33ff" style="visibility:hidden;">#cc33ff</span></td>
+    <td style="width:40px; background:#cc66ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc66ff')" onmouseout="setinvisible('ccc66ff')">&nbsp;<span id="ccc66ff" style="visibility:hidden;">#cc66ff</span></td>
+    <td style="width:40px; background:#cc99ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('ccc99ff')" onmouseout="setinvisible('ccc99ff')">&nbsp;<span id="ccc99ff" style="visibility:hidden;">#cc99ff</span></td>
+    <td style="width:40px; background:#ccccff; color:#000000; font-size:0.8em;" onmouseover="setvisible('cccccff')" onmouseout="setinvisible('cccccff')">&nbsp;<span id="cccccff" style="visibility:hidden;">#ccccff</span></td>
+    <td style="width:40px; background:#ccffff; color:#000000; font-size:0.8em;" onmouseover="setvisible('cccffff')" onmouseout="setinvisible('cccffff')">&nbsp;<span id="cccffff" style="visibility:hidden;">#ccffff</span></td>
+    <td style="width:40px; background:#ff00ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff00ff')" onmouseout="setinvisible('cff00ff')">&nbsp;<span id="cff00ff" style="visibility:hidden;">#ff00ff</span></td>
+    <td style="width:40px; background:#ff33ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff33ff')" onmouseout="setinvisible('cff33ff')">&nbsp;<span id="cff33ff" style="visibility:hidden;">#ff33ff</span></td>
+    <td style="width:40px; background:#ff66ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff66ff')" onmouseout="setinvisible('cff66ff')">&nbsp;<span id="cff66ff" style="visibility:hidden;">#ff66ff</span></td>
+    <td style="width:40px; background:#ff99ff; color:#000000; font-size:0.8em;" onmouseover="setvisible('cff99ff')" onmouseout="setinvisible('cff99ff')">&nbsp;<span id="cff99ff" style="visibility:hidden;">#ff99ff</span></td>
+    <td style="width:40px; background:#ffccff; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffccff')" onmouseout="setinvisible('cffccff')">&nbsp;<span id="cffccff" style="visibility:hidden;">#ffccff</span></td>
+    <td style="width:40px; background:#ffffff; color:#000000; font-size:0.8em;" onmouseover="setvisible('cffffff')" onmouseout="setinvisible('cffffff')">&nbsp;<span id="cffffff" style="visibility:hidden;">#ffffff</span></td>
+  </tr>
+</table>
+<br><a href="#top">Vissza az elejére</a>
+
+<h2><a name="menu"></a>Oldal menüszerkezetének megadása</h2>
+<div>Ilyen kinézetű oldalt szeretnénk:<br><img src="files/menu.png" alt="menuszerkezet"><br>
+Pontosabban négy HTML fájlt, amely mind azonos stílusú, tartalmazza a menüt, de a jobb
+oldali részen látható tartalom más és más. Kell tehát négy HTML fájlt készíteni az
+alábbi megadott HTML kóddal, illetve egy CSS fájlt a szintén megadott CSS kóddal:</div>
+<ol>
+<li>fooldal.html</li>
+<li>elso.html</li>
+<li>masodik.html</li>
+<li>harmadik.html</li>
+<li>valami.css</li>
+</ol>
+<div>A HTML fájlok ehhez hasonlóan nézzenek ki:</div>
+<span>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;<br>
+&lt;html&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2"&gt;<br>
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="valami.css" type="text/css"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;Oldal címe&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&lt;div class="menu"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="fooldal.html"&gt;Főoldal&lt;/a&gt;&lt;br&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="elso.html"&gt;1. aloldal&lt;/a&gt;&lt;br&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="masodik.html"&gt;2. aloldal&lt;/a&gt;&lt;br&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="harmadik.html"&gt;3. aloldal&lt;/a&gt;&lt;br&gt;<br>
+&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;div class="tartalom"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[Ide kerüljön a tartalom - ez mind a négy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HTML fájlban más legyen, a többi azonos.]<br>
+&nbsp;&nbsp;&lt;/div&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+</span><br>
+<div>A CSS fájl tartalmazza ezt (az egyéb formázásokon kívül):</div>
+<span><a name="menucss"></a>
+div.menu {<br>
+&nbsp;&nbsp;position: fixed;<br>
+&nbsp;&nbsp;float: left;<br>
+&nbsp;&nbsp;width: 170px;<br>
+}<br>
+div.tartalom {<br>
+&nbsp;&nbsp;margin-left: 190px;<br>
+}<br>
+</span>
+<br><a href="#top">Vissza az elejére</a>
+</body>
+</html>

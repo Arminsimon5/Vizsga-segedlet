@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hálózat segédlet</title>
+    <script type="text/javascript">
+        function setvisible(id)
+        {
+            document.getElementById(id).style.visibility="visible";
+        }
+        function setinvisible(id)
+        {
+            document.getElementById(id).style.visibility="hidden";
+        }
+    </script>
+    <style type="text/css">
+        span {  font-family: "Lucida Console", Monaco, monospace; font-size: 0.9em; font-weight: bold;}
+        span.lighter {  font-weight: lighter;}
+        table, td {  border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <h1>Hálózat segédlet</h1>
+    <h2>Tartalomjegyzék</h2>
+    <ul>
+        <li><a href="#alap">Alapkonfig</a></li>
+        <li><a href="#ip">Ip cím adás</a></li>
+        <li><a href="#ido">Idő állítás</a></li>
+        <li><a href="#jelszo">Jelszó cucc</a></li>
+        <li><a href="#router">Router/Switch jelszavazás</a></li>
+        <li><a href="#telnet">Telnet beállítása</a></li>
+        <li><a href="#ssh">SSH beállítása</a></li>
+        <li><a href="#ssh2">SSH megnézése számitógépen</a></li>
+        <li><a href="#ipv6">IPV6 beállítása</a></li>
+        <li><a href="#dhcp">DHCP Router</a></li>
+        
+    </ul>
+    <h2 id="alap">Alapkonfig</h2>
+    <ul style="list-style-type: none;">
+        <li>en(enable)</li>
+        <li>conf t</li>
+        <li>hostname (host eszköz neve)</li>
+        <li>banner motd #idekellabannerszöveg#</li>
+        <li>enable secret (ide egy jelszo kell)</li>
+        <li>line con (melyik console line-t akarsz konfigolni, pl:0)</li>
+        <li>password (ide is jelszo)</li>
+        <li>login </li>
+        <li>exit</li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="ip">Ip cím adás</h2>
+    <ul style="list-style-type: none;">
+	    <li>int (interface neve)</li>
+	    <li>ip address (ipcím) (maszk)</li>
+	    <li>no sh</li>
+	    <li>ip default-gateway (ipcím)</li>
+	    <li>exit</li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="ido">Idő állítás</h2>
+    <ul style="list-style-type: none;">
+        <li>clock set (óra):(perc):(másodperc) (nap) (hónap) (év)</li>
+    </ul>
+    <h2 id="jelszo">Jelszó cucc</h2>
+    <ul style="list-style-type: none;">
+	    <li>security passwords min-length (számban megadva)</li>
+	    <li>login block-for(number of seconds) within (number of seconds)</li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="router">Router/Switch jelszavazás (ssh kapcsolathoz elengedhetetlen) eszköz átnevezése elengedhetelen</h2>
+    <ul style="list-style-type: none;">
+        <li>enable</li>
+        <li>config termina</li>
+        <li>line console </li>
+        <li>password (amit akarsz jelszó)</li>
+        <li>login</li>
+        <li>exit</li>
+        <li>exit</li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="telnet">Telnet beállítása (jelszavazás és ip cím kiosztás után szigorúan)</h2>
+    <ul style="list-style-type: none;">
+        <li>enable</li>
+        <li>config terminal </li>
+        <li>line vty 0 15</li>
+        <li>transport input telnet </li>
+        <li>password (amit akarsz jelszó) </li>
+        <li>login</li>
+        <li>exit</li>
+        <li>exit</li>
+        <li>exit </li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="ssh">SSH (szigorúan router hostname és ip cím és jelszavazás line con és enable secret után működik)</h2>
+    <ul style="list-style-type: none;">
+        <li>enable </li>
+        <li>config terminal </li>
+        <li>ip domain-name (ide a feladat által adott oldal) </li>
+        <li>crypto key generate rsa ( majd amennyit kér a feladat)</li>
+        <li>username (amit megadnak pl) admin secret (jelszó amit adnak pl) sshpass</li>
+        <li>line vty 0 15 </li>
+        <li>transport input ssh</li>
+        <li>login local</li>
+        <li>exit</li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="ssh2">SSH megnézése számitógépen</h2>
+    <ul style="list-style-type: none;">
+        <li>parancssor megnyitása</li>
+        <li>ssh -l (IDE) (megadjuk felhasználó nevet és az eszköz ipjét)</li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="ipv6">IPV6</h2>
+    <ul style="list-style-type: none;">
+        <li>en</li>
+        <li>config t</li>
+        <li>ipv6 unicast-routing</li>
+        <li>int g0/0</li>
+        <li>ipv6 enable</li>
+        <li>ipv6 address (ip)</li>
+        <li>ipv6 address fe80::1 link-local</li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="dhcp">DHCP Router</h2> 
+    <ul style="list-style-type: none;">
+        <li>en</li>
+        <li>config t</li>
+        <li>ip dhcp excluded-address(ip tartomány ami nem kerül bele kiosztott címek közé)</li>
+        <li>ip dhcp pool (azonosító (név))</li>
+        <li>network  (hálózat amitől osszon) mindig kiosztható cím előtt lévő a network </li>
+        <li>default-router (maga a router interface, az átjáró) </li>
+        <li>dns-server (amit a feladat ad meg)</li>
+        <li>domain-name (amit a feladat ad meg)</li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+</body>
+</html>

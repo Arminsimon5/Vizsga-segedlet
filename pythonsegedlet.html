@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python segédlet</title>
+    <script type="text/javascript">
+        function setvisible(id)
+        {
+            document.getElementById(id).style.visibility="visible";
+        }
+        function setinvisible(id)
+        {
+            document.getElementById(id).style.visibility="hidden";
+        }
+    </script>
+    <style type="text/css">
+        span {  font-family: "Lucida Console", Monaco, monospace; font-size: 0.9em; font-weight: bold;}
+        span.lighter {  font-weight: lighter;}
+        table, td {  border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <h1>Python segédlet</h1>
+    <h2>Tartalomjegyzék</h2>
+    <ul>
+        <li><a href="#kiir">Kiiratás</a></li>
+        <li><a href="#cikl">Ciklusok</a></li>
+        <li><a href="#elag">Elágazás</a></li>
+        <li><a href="#fajl">Fájlkezelés</a></li>
+        <li><a href="#osztaly">Osztályok</a></li>
+        <li><a href="#dict">Dictionary</a></li>
+        
+    </ul>
+    <h2 id="kiir">Kiiratás</h2>
+    <ul style="list-style-type: none;">
+        <li><code>print("")</code></li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="cikl">Ciklusok</h2>
+    <h3>for ciklus</h3>
+    <ul style="list-style-type: none;">
+        <li><code>for item in range():</code></li>
+        <li><code>for item in lista:</code></li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h3>while ciklus</h3>
+    <ul style="list-style-type: none;">
+        <li><code>while feltétel:</code></li>
+        <li><code>While True:</code></li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="elag">Elágazás</h2>
+    <ul style="list-style-type: none;">
+        <li><code>if feltétel:</code></li>
+        <li><code>elif feltétel:</code></li>
+        <li><code>else:</code></li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="fajl">Fájlkezelés</h2>
+    <h3>Fájl beolvasás</h3>
+    <ul style="list-style-type: none;">
+        <li><code>file=open("fájlnév","r",encoding="")</code></li>
+        <li><code>file.readline()</code></li>
+        <li><code>file.close</code></li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h3>Fájl Kiiratás</h3>
+    <ul style="list-style-type: none;">
+        <li><code>file=open("fájlnév","w",encoding="")</code></li>
+        <li><code>file.write()</code></li>
+        <li><code>file.close</code></li>
+    </ul>
+    <br><a href="#top">Vissza az elejére</a>
+    <h2 id="osztaly">Osztályok</h2>
+    <pre><code>
+        class Osztály
+            def __init__(self,valami1,valami2) -> None:
+                self.valami1=valami1
+                self.valami2=valami2
+            def __str__(self) -> str:
+                return f"{self.valami1}; {self.valami2}"
+    </code></pre>
+        <br><a href="#top">Vissza az elejére</a>
+    <h2 id="dict">Dictionary</h2>
+    <pre><code>
+        lista=[]
+        db={}
+        for item in lista:
+            if item.valami in db.keys():
+                db[item.valami]+=1
+            else:
+                db[item.valami]=1
+        for item in db.keys():
+            print(f"{item} - {db[item]}")
+    </code></pre>
+    <br><a href="#top">Vissza az elejére</a>
+</body>
+</html>
